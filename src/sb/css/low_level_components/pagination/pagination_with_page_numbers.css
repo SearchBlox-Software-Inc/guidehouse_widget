@@ -1,0 +1,100 @@
+.searchGrid ul.pagination  {
+  margin: 0 0 1em;
+  list-style: none;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+.searchGrid ul.pagination a {
+  margin: 0 1px;
+  border: none;
+  /* font-weight: 600; */
+}
+.searchGrid ul.pagination a:hover{
+ /* text-decoration: underline;  */
+}
+/* .searchGrid ul.pagination li:first-child a, ul.pagination li:last-child a {
+  border-top-right-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+} */
+.searchGrid ul.pagination a:focus{
+  border: none;
+}
+.searchGrid ul li{
+
+}
+.hidePagination{
+  display: none;
+}
+.page-link{
+  
+}
+.searchGrid .page-item.active .page-link {
+  /* background-color: #0070cc; */
+
+    color: #fff;
+    cursor: text;
+}
+.searchGrid .page-item.active .page-link:hover{
+  text-decoration: none;
+}
+ /* .searchGrid .page-item.active .page-link:focus {
+   box-shadow: none;
+ } */
+.searchGrid .page-item {
+  height: 37px;
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+.searchGrid .page-item .pagination-input{
+  border: 0.1rem solid #cdcdcd;
+  font-weight: 500 ;
+  height: 100%;
+  padding: 0.6rem 0.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+  /* max-width: 40px; */
+  /* width: 20px; */
+}
+.searchGrid .page-item .pagination-input::-webkit-outer-spin-button,
+.searchGrid .page-item  .pagination-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  /* margin: 0; */
+  width: min-content;
+}
+.searchGrid .last-page{
+  color: #7B7B7B;
+  pointer-events: none;
+}
+
+.searchGrid .page-link {
+  text-decoration: none;
+   position: relative;
+    display: flex;
+    padding: .6rem .5rem;
+    align-items: center;
+    /* margin-left: -1px; */
+    /* line-height: 1.25; */
+    color: var(--Black);
+    font-size: 1.4rem;
+    background-color: #fff;
+    /* padding-bottom: 0; */
+    vertical-align: middle;
+  }
+  .pagination p{
+    margin: 0;
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    /* font-weight: 600; */
+  }
+@media (max-width:767px) {
+  /* .searchGrid ul.pagination{
+    display: block;
+  } */
+  .searchGrid .page-item{
+    margin: 3px 0;
+  }
+}
