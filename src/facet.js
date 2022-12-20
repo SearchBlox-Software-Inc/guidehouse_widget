@@ -171,7 +171,7 @@ window.facets = {
     "voiceSearch": true,
     "voiceSearchAPI": "",
     "debug": false,
-    "defaultType": "AND",
+    "defaultType": "OR",
     "apikey": "",
     "autologout": true,
     "pluginDomain": "https://smartfaqs.searchblox.com",

@@ -23,8 +23,9 @@ body{
 .searchGrid{
     max-width: var(--DesktopWidth);
     width: 100%;
-    margin: 0 auto;
-    margin-top: 30px;
+    margin: 30px auto;
+    /* margin-top: 30px; */
+    margin-bottom: 100px;
 }
 .login-firstbar{
     max-width: var(--DesktopWidth);
@@ -58,7 +59,7 @@ body{
     display: flex;
     justify-content: space-between;
     font-size: 1.4rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 #results-container{
     margin-top: 28px;
@@ -99,6 +100,18 @@ border-right: 1px solid #cacaca;
     font-size: var(--FontSizePrimary);
     font-weight: 400;
 }
+.suggest-autoSearch{
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    & a{
+        color: var(--Black);
+        font-weight: bold;
+    }
+    & span{
+        font-weight: bold;
+        color: #1B1B1B;
+    }
+}
 @media screen and (max-width:1200px){
     #result-facet-container{
         display: block;
@@ -116,6 +129,7 @@ border-right: 1px solid #cacaca;
         max-width: var(--DesktopWidth);
         margin: 0 auto;
     } */
+    
     .resultWithFacet{
         padding: 0;
         margin-top: 30px;
@@ -130,19 +144,17 @@ border-right: 1px solid #cacaca;
         /* max-width: 970px;
         width: 100%; */
     }
-    .facetFiltersDiv{
+    .facetFiltersDiv ul{
+        display: flex;
         overflow-x: scroll;
         scroll-behavior: smooth;
-        /* -ms-overflow-style: none;  IE and Edge */
-  /* scrollbar-width: none; */
+        /* IE and Edge */
+        -ms-overflow-style: none;  
+  scrollbar-width: none;
   
-        /* &::-webkit-scrollbar{
+        &::-webkit-scrollbar{
             display: none;
-        } */
-    }
-    .facetFiltersDiv ul{
-    display: flex;
-    width: 100%;
+        }
     }
     .facetValue{
         margin: 0 10px;
@@ -174,6 +186,7 @@ border-right: 1px solid #cacaca;
     .facetValue:hover .facetChild{
         box-shadow: none;
         border: none;
+        border: 1px solid transparent;
     }
 }
 @media screen and (max-width:900px){
@@ -183,7 +196,9 @@ border-right: 1px solid #cacaca;
     #searchInput.voice-search-enabled{
         padding-right:90px;
     }
-    
+    .facetFilters ul, .facetFiltersDiv ul {
+        padding-left: 25px;
+    }
     .searchGrid{
         padding:0 0px;
     }
@@ -210,7 +225,7 @@ border-right: 1px solid #cacaca;
         width: 30px;
     }
     .facetFiltersDiv{
-        padding-left: 25px;
+        /* padding-left: 25px; */
     }
     .searchResult{
         width: 100%;

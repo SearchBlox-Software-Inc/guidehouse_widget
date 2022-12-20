@@ -386,7 +386,6 @@ class SearchUIComponent extends Component {
     const noResults = response.results === undefined || parseInt(response.resultInfo.hits, 10) === 0 || Math.ceil(parseInt(response.resultInfo.hits, 10)/parameters.pagesize) < parseInt(parameters.page, 10);
     // let todayTime = parameters['f.'+date+'.filter'];
     // let month = Intl.DateTimeFormat({year:"numeric"}).format(todayTime)
-    console.log(response)
     return (
       <>
         <div className="searchGrid">
@@ -417,13 +416,13 @@ class SearchUIComponent extends Component {
               noResults ?
             <div className="display-count-data">
             <div className={['resultsText padding-0']}>
-            0 Results 
+            0 RESULTS 
             </div>
           </div>
                 :
             <div className="display-count-data">
             <div className={['resultsText padding-0',(parameters.XPC?"resultsForMore":"")].join(" ")}>
-            <b>{response.resultInfo.hits}</b> Results 
+            {response.resultInfo.hits} Results 
             </div>
           </div>
              )
@@ -480,8 +479,8 @@ class SearchUIComponent extends Component {
                             }
                             <div className="display-count-data-main">
                               {/* <div className={['resultsText padding-0',(parameters.XPC?"resultsForMore":"")].join(" ")}> */}
-                                <p>Results</p>
-                                <p>page {response.resultInfo.currentPage} of {response.resultInfo.lastPage}</p>
+                                <p>{response.resultInfo.start}-{response.resultInfo.end} of {response.resultInfo.hits} RESULTS</p>
+                                <p>PAGE {response.resultInfo.currentPage} OF {response.resultInfo.lastPage}</p>
                                 {/* {
                                   (response.resultInfo.query) && <span> for <b dangerouslySetInnerHTML={{__html: (response.resultInfo.query.replace(/\\/g, ''))}}>{}</b>.</span>
                                 } */}

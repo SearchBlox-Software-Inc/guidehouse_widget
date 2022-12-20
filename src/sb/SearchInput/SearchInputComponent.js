@@ -32,7 +32,7 @@ const SearchInputComponent = ({ response, resetSuggestSearchQueries, query: quer
       <circle cx="10.0763" cy="10.0763" r="9.57629" stroke="#1B1B1B"/>
       <line x1="16.9395" y1="17.8925" x2="24.0645" y2="25.0176" stroke="#1B1B1B"/>
       </svg>)
-   })
+   });
    
    const dropdownRef = useRef(null);
 

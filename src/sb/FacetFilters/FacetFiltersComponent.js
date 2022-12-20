@@ -302,7 +302,6 @@ export default class FacetFilters extends Component {
     let dateconvertTwo = dataStringTwo.substr(22, 19);
     if (parameters['f.' + date + '.filter'] && !parameters['f.' + date + '.filter'].includes("*"))
       parameters['f.' + date + '.filter'] = dateFormat(dateconvert, "dd mmmm yyyy") + " - " + dateFormat(dateconvertTwo, "dd mmmm yyyy");
-    console.log(this.orderedFacets)
     // RENDERS THE FACETS AND HAS <Facet /> COMPONENT FOR EACH FACET IN FACETS
     return (
       <Fragment>

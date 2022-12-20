@@ -40,7 +40,7 @@ export default function VoiceSearch(props) {
     <line x1="0.394676" y1="0.69303" x2="21.3947" y2="27.693" stroke="black"/>
     </svg>
     )
-  })
+  });
 
 
   useEffect(() => {

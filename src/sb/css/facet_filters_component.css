@@ -50,12 +50,13 @@
   cursor: pointer;
 }
 
-.facetChild:hover{
+.facetChild{
 
 }
 .facetValue {
   word-wrap: break-word;
   cursor: pointer;
+  padding-bottom: 21px;
 }
 .activeFilter,.facetChild{
   cursor: default;

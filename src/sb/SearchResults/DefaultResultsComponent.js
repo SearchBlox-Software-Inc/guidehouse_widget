@@ -262,8 +262,8 @@ function Result(props){
     result.descriptionContent = result.description;
   }
 
-  if(result.descriptionContent && result.descriptionContent.length > 260){
-    let descriptionContent = result.descriptionContent.substring(0, 260).split(" ");
+  if(result.descriptionContent && result.descriptionContent.length > 200){
+    let descriptionContent = result.descriptionContent.substring(0, 200).split(" ");
     descriptionContent.splice(descriptionContent.length - 1, 1);
     result.descriptionContent = descriptionContent.join(" ") + " ...";
   }
@@ -283,7 +283,7 @@ function Result(props){
       }
     }
   };
-  console.log(result)
+  // console.log(result)
  // RETURNIG THE VIEW TO BE RENDERED FOR EACH RESULT
  return (
   <div className={`single-result-container ${!props.highlight ? 'noHighlight' : ''}`}>

@@ -30,7 +30,7 @@ export default class PaginationWithPageNumbers extends Component {
     let pagesArray = [];
     let lastPageValue;
     // console.log(props.currentpage)
-    if(props.lastpage){
+    if (props.lastpage) {
       lastPageValue = props.lastpage.toString();
     }
 
@@ -57,14 +57,13 @@ export default class PaginationWithPageNumbers extends Component {
         i++;
       }
     }
-    console.log(lastPageValue)
     return {
       ...state,
       pagesArray,
       lastPageValue
     };
   }
-  
+
   getPage(e, page) {
     e.preventDefault();
     let urlParameters = Object.assign({}, qs.parse(window.location.search));
@@ -77,10 +76,10 @@ export default class PaginationWithPageNumbers extends Component {
 
   keydown(e, page) {
     if (e.keyCode === 13) {
- if(page > this.state.lastPageValue){
-        page = this.state.lastPageValue
+      if (parseInt(e.target.value) > parseInt(this.state.lastPageValue)) {
+        page = this.state.lastPageValue;
         this.getPage(e, page);
-      }else{
+      } else {
         this.getPage(e, page);
       }
     }
@@ -90,33 +89,21 @@ export default class PaginationWithPageNumbers extends Component {
     e.preventDefault();
     return false;
   }
-  handlePageInput(e){
-    let value = e.target.value; 
-    this.setState({currentPageState: value}) ;
-    console.log(this.state.pagesArray)
-    // document.querySelector(".pagination-input").addEventListener('input',function(){
-    //   this.value.length !== 0 ? this.style.width = (this.value.length+1) + 'ch' : this.style.width = 2 + 'ch'
-    // })
+  handlePageInput(e) {
+    let value = e.target.value;
+    this.setState({ currentPageState: value });
   }
-  showValue(e){
-    let value = e.target.value; 
-    if(value === ""){
-      this.setState({currentPageState: this.props.currentpage})
+  showValue(e) {
+    let value = e.target.value;
+    if (value === "") {
+      this.setState({ currentPageState: this.props.currentpage });
     }
-      // document.querySelector(".pagination-input").addEventListener('input',function(){
-      //   this.value.length !== 0 ? this.style.width = (this.value.length+2) + 'ch' : this.style.width = 2 + 'ch'
-      // })
-    // }else{
-    //   this.setState({currentPageState: value})
-    // }
-    // value === "" ? value === this.props.currentpage :  ;
-    
+
   }
   render() {
     let { lastpage, currentpage } = this.props;
-    let {currentPageState, currentPageValue} = this.state;
+    let { currentPageState, currentPageValue } = this.state;
     let urlParameters = Object.assign({}, qs.parse(window.location.search));
-    console.log(currentPageState);
     if (lastpage !== 1) {
       return (
         <Pagination aria-label="Page navigation">
@@ -139,24 +126,12 @@ export default class PaginationWithPageNumbers extends Component {
                 </PaginationLink>
               </PaginationItem>
           }
-          {/* {
-              this.state.pagesArray.map((val)=>{
-                return <PaginationItem key={val} className={[(urlParameters.page === val || urlParameters.page === val.toString())?'active' :'',(!urlParameters.page && val === 1)?'active' :''].join(" ")}>
-                  <PaginationLink href="#" aria-label={val.toString()} title={val} onKeyDown={(e)=> this.keydown(e,val)} onClick={(e)=>{(urlParameters.page === val || urlParameters.page === val.toString())? this.currentPage(e): this.getPage(e,val);}} tabIndex={`${(urlParameters.page === val || urlParameters.page === val.toString())?"-1" :"0"}`}>{val}
-                  </PaginationLink>
-                </PaginationItem>;
-              })
-            } */}
           <PaginationItem >
-          <input className='pagination-input pagination-current-page' aria-label={currentpage.toString()} value={currentPageState} style={{"width":(currentPageState.length+2) + "ch", "minWidth": "3ch"}} onChange={(e)=>this.handlePageInput(e)} onKeyDown={(e)=>this.keydown(e,currentPageState)} type="number"  onBlur={this.showValue}/>
+            <input className="pagination-input pagination-current-page" aria-label={currentpage.toString()} value={currentPageState} style={{ "width": (currentPageState.length + 2) + "ch", "minWidth": "3ch" }} onChange={(e) => this.handlePageInput(e)} onKeyDown={(e) => this.keydown(e, currentPageState)} type="number" onBlur={this.showValue} />
           </PaginationItem>
           <p>of</p>
           <PaginationItem className="last-page">
-            {/* <PaginationLink href="#" aria-label={lastpage.toString()} title={lastpage}
-          // onKeyDown={(e)=> this.keydown(e,lastpage)} onClick={(e)=>{(urlParameters.page === currentpage || urlParameters.page === currentpage.toString())? this.currentPage(e): null}} tabIndex={`${(urlParameters.page === currentpage || urlParameters.page === currentpage.toString())?"-1" :"0"}`}
-           >{lastpage}
-          </PaginationLink> */}
-            <PaginationLink className='page-link' href="#" aria-label={lastpage.toString()} title={lastpage} onKeyDown={(e) => this.keydown(e, currentpage)} onClick={(e) => { (urlParameters.page === currentpage || urlParameters.page === currentpage.toString()) ? this.currentPage(e) : null }} tabIndex={`${(urlParameters.page === currentpage || urlParameters.page === currentpage.toString()) ? "-1" : "0"}`}>{lastpage}
+            <PaginationLink className="page-link" href="#" aria-label={lastpage.toString()} title={lastpage} onKeyDown={(e) => this.keydown(e, currentpage)} onClick={(e) => { (urlParameters.page === currentpage || urlParameters.page === currentpage.toString()) ? this.currentPage(e) : null }} tabIndex={`${(urlParameters.page === currentpage || urlParameters.page === currentpage.toString()) ? "-1" : "0"}`}>{lastpage}
             </PaginationLink>
           </PaginationItem>
           {

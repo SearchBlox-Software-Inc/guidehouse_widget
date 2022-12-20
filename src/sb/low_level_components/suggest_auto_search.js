@@ -24,8 +24,8 @@ export default class SuggestAutoSearch extends React.Component{
     let urlParameters = Object.assign({}, qs.parse(window.location.search));
     urlParameters.query = this.props.resultquery;
     return(
-      <div className="col-sm-12" style={{padding: "0"}}>
-      <p style={{color:"#d91a61"}}>Showing results for <a href={`?${qs.stringify(this.urlParameters)}`} onClick={(e) => this.suggestCLick(e)} title="Suggested query" style={{textDecoration:"underline",color:"#0a4a69",fontFamily:"IsidoraSansBold"}} dangerouslySetInnerHTML={{__html: this.props.resultquery}}>{ }</a> instead of <span style={{color:"#0a4a69"}}>{ this.props.actualquery}</span></p>
+      <div className="suggest-autoSearch" style={{padding: "0"}}>
+      <p>Showing results for <a href={`?${qs.stringify(this.urlParameters)}`} onClick={(e) => this.suggestCLick(e)} title="Suggested query"  dangerouslySetInnerHTML={{__html: this.props.resultquery}}>{ }</a> instead of <span >{ this.props.actualquery}</span></p>
       </div>
     );
   }
